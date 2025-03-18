@@ -3,7 +3,7 @@
 // Database configuration
 $host = 'bgcdb.mysql.database.azure.com'; // Azure database host
 $username = 'judymalahay'; // Azure database username
-$password = 'Malahayj12345'; // Your Azure database password
+$password = 'Malahayj123'; // Your Azure database password
 $database = 'bgc_database'; // Your Azure database name
 
 // Create a connection
