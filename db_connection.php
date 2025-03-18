@@ -1,17 +1,23 @@
-
 <?php
 // Database configuration
-$host = 'bgcdb.mysql.database.azure.com'; // Azure database host
-$username = 'judymalahay'; // Azure database username
-$password = 'Malahayj123'; // Your Azure database password
-$database = 'bgc_database'; // Your Azure database name
+$conn = new mysqli(
+    'bgcdb.mysql.database.azure.com', // Host
+    'judymalahay',                    // Username
+    'Malahayj123',                    // Password
+    'bgc_database',                   // Database
+    3306,                             // Port
+    null,                             // Socket
+    MYSQLI_CLIENT_SSL                 // Flags for SSL
+);
 
-// Create a connection
-$conn = new mysqli($host, $username, $password, $database);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Check connection
+if ($conn->connect_errno) {
+    die('Connection failed: ' . $conn->connect_error);
+} else {
+    echo 'Connection successful!';
 }
+
+// Optional: Enable exception mode for better error handling
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 ?>
