@@ -4,7 +4,7 @@ $host = 'bgcdb.mysql.database.azure.com'; // Azure database host
 $username = 'judymalahay'; // Azure database username
 $password = 'Malahayj123'; // Your Azure database password
 $database = 'bgc_database'; // Your Azure database name
-
+$port = 3306;
 // Create a connection
 $conn = new mysqli($host, $username, $password, $database);
 
