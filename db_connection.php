@@ -1,16 +1,17 @@
+
 <?php
-$servername = "bgcdb.mysql.database.azure.com";
-$username = "judymalahay";
-$password = "Malahayj123";
-$database = "bgc_database";
-$port = 3306;
+// Database configuration
+$host = 'bgcdb.mysql.database.azure.com'; // Azure database host
+$username = 'judymalahay'; // Azure database username
+$password = 'Malahayj12345'; // Your Azure database password
+$database = 'bgc_database'; // Your Azure database name
 
-$conn = mysqli_init();
-mysqli_ssl_set($conn, NULL, NULL, "/home/site/wwwroot/certs/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+// Create a connection
+$conn = new mysqli($host, $username, $password, $database);
 
-if (!mysqli_real_connect($conn, $servername, $username, $password, $database, $port, NULL, MYSQLI_CLIENT_SSL)) {
-    die("Connection failed: " . mysqli_connect_error());
-} 
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-echo "Connected successfully with SSL";
 ?>
