@@ -1,18 +1,17 @@
 <?php
-// Database configuration
-$conn = mysqli_init(); // Initialize MySQLi connection
+// Initialize MySQLi
+$conn = mysqli_init();
 
-// Enable SSL
+// Set SSL for secure transport
 mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL);
 
-// Establish connection
+// Establish secure connection
 $conn->real_connect(
     'bgcdb.mysql.database.azure.com', // Host
     'judymalahay',                    // Username
     'Malahayj123',                    // Password
     'bgc_database',                   // Database
-    3306,                             // Port
-    MYSQLI_CLIENT_SSL                 // Flags for SSL
+    3306                              // Port
 );
 
 // Check connection
@@ -22,6 +21,6 @@ if ($conn->connect_errno) {
     echo 'Connection successful!';
 }
 
-// Optional: Enable exception mode for better error handling
+// Optional: Enable better error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 ?>
